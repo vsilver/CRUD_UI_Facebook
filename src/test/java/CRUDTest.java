@@ -21,20 +21,22 @@ public class CRUDTest extends TestBase {
 
     private String login;
     private String pass;
-    private final static String mylogin = "soqejwqizt_1549640997@tfbnw.net";
-    private final static String mypass = "MyDochka1";
+    private final static String MYLOGIN = "soqejwqizt_1549640997@tfbnw.net";
+    private final static String MYPASS = "MyDochka1";
 
-    By title = By.id("pageTitle");
+    //By title = By.id("pageTitle");
+    ProfilePage profilepage = new ProfilePage(driver);
 
     @Test
     public void successfullLoginTest(){
-        login = mylogin;
-        pass = mypass;
+        login = MYLOGIN;
+        pass = MYPASS;
         logIn(login, pass);
         WebDriverWait wait = new WebDriverWait(driver, 40);
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(title));
-
-        Assert.assertEquals(title, driver.getTitle());
+        profilepage.createNewPost();
+       /* WebDriverWait wait = new WebDriverWait(driver, 40);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(title));
+        Assert.assertEquals(title, driver.getTitle());*/
     }
 
 
