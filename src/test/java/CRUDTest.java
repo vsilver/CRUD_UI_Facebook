@@ -28,16 +28,34 @@ public class CRUDTest extends TestBase {
     ProfilePage profilepage = new ProfilePage(driver);
 
     @Test
-    public void successfullLoginTest(){
+    public void createPost(){
         login = MYLOGIN;
         pass = MYPASS;
         logIn(login, pass);
         WebDriverWait wait = new WebDriverWait(driver, 40);
+        profilepage.clickOnOption();
         profilepage.createNewPost();
        /* WebDriverWait wait = new WebDriverWait(driver, 40);
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(title));
         Assert.assertEquals(title, driver.getTitle());*/
     }
 
+    @Test
+    public void upadePost(){
+        login = MYLOGIN;
+        pass = MYPASS;
+        logIn(login, pass);
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+
+    }
+
+    @Test
+    public void deletePost(){
+        login = MYLOGIN;
+        pass = MYPASS;
+        logIn(login, pass);
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+
+    }
 
 }
