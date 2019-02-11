@@ -26,6 +26,7 @@ public class ProfilePage extends TestBase {
     //private By deletepost = By.xpath("//div[@class='_54ng']//span[contains(text(),'Delete')]");
     //private By editpost = By.xpath("//div[@class='_54ng']//span[contains(text(),'Edit Post')]");
 
+
     public ProfilePage writeMessage(){
         driver.findElement(By.xpath("//div[@class='_1mf _1mj']")).click();
         driver.findElement(By.xpath("//div[@class='_1mf _1mj']")).sendKeys("Hi, It's new post");
@@ -52,6 +53,17 @@ public class ProfilePage extends TestBase {
         driver.findElement(By.xpath("//div[@class='_54ng']//span[contains(text(),'Edit Post')]")).click();
         return this;
     }
+
+    public ProfilePage deletePost(){
+        driver.findElement(By.xpath("//div[@class='_54ng']//span[contains(text(),'Delete')]")).click();
+        return this;
+    }
+
+    public ProfilePage confirmDeleting(){
+        
+        return this;
+    }
+
 
 
 
