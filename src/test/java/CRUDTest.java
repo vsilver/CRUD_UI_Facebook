@@ -32,12 +32,8 @@ public class CRUDTest extends TestBase {
         login = MYLOGIN;
         pass = MYPASS;
         logIn(login, pass);
-        //WebDriverWait wait = new WebDriverWait(driver, 40);
-        //profilepage.clickOnOption();
+        WebDriverWait wait = new WebDriverWait(driver, 40);
         profilepage.createNewPost();
-       /* WebDriverWait wait = new WebDriverWait(driver, 40);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(title));
-        Assert.assertEquals(title, driver.getTitle());*/
     }
 
     @Test
@@ -56,6 +52,7 @@ public class CRUDTest extends TestBase {
         pass = MYPASS;
         logIn(login, pass);
         WebDriverWait wait = new WebDriverWait(driver, 40);
+        profilepage.deletePost();
 
     }
 

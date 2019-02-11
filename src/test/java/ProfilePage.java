@@ -60,7 +60,7 @@ public class ProfilePage extends TestBase {
     }
 
     public ProfilePage confirmDeleting(){
-        
+
         return this;
     }
 
