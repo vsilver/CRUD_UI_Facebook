@@ -24,7 +24,17 @@ public class CRUDTest extends TestBase {
     private final static String MYLOGIN = "soqejwqizt_1549640997@tfbnw.net";
     private final static String MYPASS = "MyDochka1";
 
-    //By title = By.id("pageTitle");
+    @Before
+    public void setUp() {
+
+        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        driver.manage().window().maximize();
+        driver.get("https://www.facebook.com/");
+
+    }
+
     ProfilePage profilepage = new ProfilePage(driver);
 
     @Test

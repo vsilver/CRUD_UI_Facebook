@@ -16,15 +16,6 @@ public class TestBase {
 
     public WebDriver driver;
 
-    @Before
-    public void setUp() {
-
-        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
-        driver.get("https://www.facebook.com/");
-    }
-
     private By usernameField = By.xpath("//input[@type='email']");
     private By passwordField = By.xpath("//input[@type='password']");
     private By loginButton = By.id("loginbutton");
