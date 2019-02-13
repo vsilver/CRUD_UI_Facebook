@@ -19,11 +19,10 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assume.assumeTrue;
 
 public class ProfilePage extends TestBase {
-    WebDriver driver;
 
-    public ProfilePage(WebDriver driver) {
-        this.driver = driver;
+    public WebDriver driver;
 
+    public ProfilePage() {
     }
 
     private By newpost = By.xpath("//div[@class='_1mf _1mj']");

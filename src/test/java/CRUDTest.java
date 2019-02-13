@@ -19,6 +19,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CRUDTest extends TestBase {
 
+    //public WebDriver driver;
+
+    public CRUDTest() {
+        this.driver = driver;
+
+    }
+    WebDriver driver = new ChromeDriver();
     private String login;
     private String pass;
     private final static String MYLOGIN = "soqejwqizt_1549640997@tfbnw.net";
@@ -28,11 +35,9 @@ public class CRUDTest extends TestBase {
     public void setUp() {
 
         System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
-        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.facebook.com/");
-
     }
 
     ProfilePage profilepage = new ProfilePage(driver);
@@ -42,7 +47,6 @@ public class CRUDTest extends TestBase {
         login = MYLOGIN;
         pass = MYPASS;
         logIn(login, pass);
-        WebDriverWait wait = new WebDriverWait(driver, 40);
         profilepage.createNewPost();
     }
 
@@ -51,7 +55,6 @@ public class CRUDTest extends TestBase {
         login = MYLOGIN;
         pass = MYPASS;
         logIn(login, pass);
-        WebDriverWait wait = new WebDriverWait(driver, 40);
         profilepage.clickOnOption();
         profilepage.editPost();
     }
@@ -61,7 +64,6 @@ public class CRUDTest extends TestBase {
         login = MYLOGIN;
         pass = MYPASS;
         logIn(login, pass);
-        WebDriverWait wait = new WebDriverWait(driver, 40);
         profilepage.deletePost();
 
     }
