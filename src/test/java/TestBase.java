@@ -16,6 +16,10 @@ public class TestBase {
 
     public WebDriver driver;
 
+    public TestBase(WebDriver driver) {
+        this.driver = driver;
+    }
+
     private By usernameField = By.xpath("//input[@type='email']");
     private By passwordField = By.xpath("//input[@type='password']");
     private By loginButton = By.id("loginbutton");

@@ -17,32 +17,36 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CRUDTest extends TestBase {
+public class CRUDTest {
 
-    public static WebDriver driver;
+    public WebDriver driver;
 
     private String login;
     private String pass;
     private final static String MYLOGIN = "soqejwqizt_1549640997@tfbnw.net";
     private final static String MYPASS = "MyDochka1";
 
-    @Before
-    public static void setUp() {
-
-        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
+    public CRUDTest() {
         driver = new ChromeDriver();
+    }
+
+    ProfilePage profilepage = new ProfilePage(driver);
+    TestBase testBase = new TestBase(driver);
+
+    @Before
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.facebook.com/");
     }
 
-    ProfilePage profilepage = new ProfilePage(driver);
 
     @Test
     public void createPost(){
         login = MYLOGIN;
         pass = MYPASS;
-        logIn(login, pass);
+        testBase.logIn(login, pass);
         profilepage.createNewPost();
     }
 
@@ -50,7 +54,7 @@ public class CRUDTest extends TestBase {
     public void upadePost(){
         login = MYLOGIN;
         pass = MYPASS;
-        logIn(login, pass);
+        testBase.logIn(login, pass);
         profilepage.clickOnOption();
         profilepage.editPost();
     }
@@ -59,7 +63,7 @@ public class CRUDTest extends TestBase {
     public void deletePost(){
         login = MYLOGIN;
         pass = MYPASS;
-        logIn(login, pass);
+        testBase.logIn(login, pass);
         profilepage.deletePost();
 
     }

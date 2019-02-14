@@ -18,12 +18,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assume.assumeTrue;
 
-public class ProfilePage extends TestBase {
+public class ProfilePage {
 
     public WebDriver driver;
 
-    public ProfilePage() {
+    public ProfilePage(WebDriver driver){
+        this.driver = driver;
     }
+
 
     private By newpost = By.xpath("//div[@class='_1mf _1mj']");
     private By sharebutton = By.xpath("//button[@class='_1mf7 _4r1q _4jy0 _4jy3 _4jy1 _51sy selected _42ft']");
