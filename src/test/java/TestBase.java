@@ -14,7 +14,7 @@ import static org.junit.Assume.assumeTrue;
 
 public class TestBase {
 
-    public WebDriver driver;
+    private WebDriver driver;
 
     public TestBase(WebDriver driver) {
         this.driver = driver;

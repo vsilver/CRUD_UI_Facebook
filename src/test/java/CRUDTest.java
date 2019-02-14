@@ -19,26 +19,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CRUDTest {
 
-    public WebDriver driver;
+    private WebDriver driver;
+    private TestBase testBase;
+    private ProfilePage profilepage;
 
     private String login;
     private String pass;
     private final static String MYLOGIN = "soqejwqizt_1549640997@tfbnw.net";
     private final static String MYPASS = "MyDochka1";
 
-    public CRUDTest() {
-        driver = new ChromeDriver();
-    }
-
-    ProfilePage profilepage = new ProfilePage(driver);
-    TestBase testBase = new TestBase(driver);
-
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.facebook.com/");
+        profilepage = new ProfilePage(driver);
+        testBase = new TestBase(driver);
     }
 
 
