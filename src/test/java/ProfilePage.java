@@ -27,7 +27,7 @@ public class ProfilePage {
     }
 
 
-    private By newpost = By.xpath("//div[@class='_1mf _1mj']");
+    private By newpost = By.xpath("//div[@class='_5rpb']");
     private By sharebutton = By.xpath("//button[@class='_1mf7 _4r1q _4jy0 _4jy3 _4jy1 _51sy selected _42ft']");
     private By taponoption = By.xpath("//div[@class='_6a uiPopover _5pbi _cmw _b1e _1wbl']//a[@aria-label='Story options']");
     private By deletepost = By.xpath("//div[@class='_54ng']//span[contains(text(),'Delete')]");
