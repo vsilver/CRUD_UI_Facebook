@@ -1,22 +1,16 @@
-import org.junit.*;
+package Pages;
+
 import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
 import static org.junit.Assume.assumeTrue;
 
-public class TestBase {
+public class LoginPage {
 
     private WebDriver driver;
 
-    public TestBase(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -24,12 +18,12 @@ public class TestBase {
     private By passwordField = By.xpath("//input[@type='password']");
     private By loginButton = By.id("loginbutton");
 
-    public TestBase typeUseName(String username){
+    public LoginPage typeUseName(String username){
         driver.findElement(usernameField).sendKeys(username);
         return this;
     }
 
-    public TestBase typePassword(String password){
+    public LoginPage typePassword(String password){
         driver.findElement(passwordField).sendKeys(password);
         return this;
     }
