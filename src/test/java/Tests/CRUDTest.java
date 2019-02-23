@@ -34,7 +34,7 @@ public class CRUDTest {
 
 
     @Test
-    public void createPost(){
+    public void createPost() throws Exception {
         login = MYLOGIN;
         pass = MYPASS;
         loginpage.logIn(login, pass);
@@ -42,7 +42,7 @@ public class CRUDTest {
     }
 
     @Test
-    public void upadePost(){
+    public void upadePost() throws Exception {
         login = MYLOGIN;
         pass = MYPASS;
         loginpage.logIn(login, pass);
@@ -51,7 +51,7 @@ public class CRUDTest {
     }
 
     @Test
-    public void deletePost(){
+    public void deletePost() throws Exception {
         login = MYLOGIN;
         pass = MYPASS;
         loginpage.logIn(login, pass);
